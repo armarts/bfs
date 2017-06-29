@@ -94,7 +94,12 @@ int main()
         }
     }
     
-    bfs(graph, dist, path, start, n);
+    int err = bfs(graph, dist, path, start, n);
+    if (err != OK)
+    {
+        printf("Error code: %d\n", err);
+        exit(1);
+    }
 
     printf("dist:\n");
     for (int i = 0; i < n; i++)
